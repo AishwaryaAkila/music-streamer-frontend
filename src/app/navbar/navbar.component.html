@@ -1,0 +1,115 @@
+<!-- <p>navbar works!</p> -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav-element" style="background-color: #29333f">
+  <a class="navbar-brand text-warning " routerLink="/home" ><b style="font-size: 23px;"><i>MUS<span style="color: red">!</span>C</i></b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-warning" routerLink="/home"><i class="fa fa-home" style="color:red" ></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" routerLink="/common/favourites" ><i class="fa fa-heart" style="color:red"></i>&nbsp;Favourites</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link text-warning" href="#" data-toggle="modal" data-target="#examplModal" ><i class="fa fa-language" style="color:red" ></i>&nbsp;Languages</a>
+        </li> -->
+        
+        
+      </ul>
+      <ul class="navbar-nav ml-auto" >
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="search" [(ngModel)]="key" type="search" placeholder="Music you love!" aria-label="Search">
+        <a class="btn text-warning  my-2 my-sm-0 out" [routerLink]="'/common/search/'+key" style="border-color: yellow" type="submit" value="search">Search</a>
+        
+        
+      </form>
+      
+       
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle text-warning"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i id="col" class="fa fa-user" style="color:red"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right " style="padding: 10px;background-color: #29333f" aria-labelledby="navbarDropdown"  >
+              
+              <h6 class="text-warning">Email :</h6>
+              <input type="text" [ngModel]="user" readonly>
+               <!-- <p style="float: right;">{{user}}</p> -->
+            
+            
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-warning" (click)="logout()" >Sign out</a>
+          </div>
+        </li>
+        
+      </ul>
+        
+    </div>
+</nav>
+
+
+  <div class="modal fade" id="examplModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="background-color:rgba(8, 8, 8, 0.884);height:350px;width:350px">
+        <div class="modal-header" style="border:none">
+          <h4 class="modal-title" id="exampleModalLabel"><font align="center"><b class="text-warning">Select music language[s]</b></font></h4>
+          <button type="button" class="close" id="xbtn" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <p id="mami">-------------------------------------------</p>
+        
+        <div class="modal-body">
+          <form method="post" action="login.php">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <input  type="checkbox" id="english" name="english" value="english">&nbsp;&nbsp;
+                <span class="text-warning">English</span>
+              </div>
+              <div class="col">
+                <input  type="checkbox" id="tamil" name="tamil" value="tamil" >&nbsp;&nbsp;<span class="text-warning">Tamil</span>
+                
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col">
+                <input type="checkbox" id="hindi" name="hindi" value="hindi">&nbsp;&nbsp;
+                <span class="text-warning">Hindi</span>
+              </div>
+              <div class="col">
+                <input type="checkbox" id="malayalam" name="malayalam" value="malayalam">&nbsp;&nbsp;
+                <span class="text-warning">Malayalam</span>
+              </div>
+            </div>
+            <br>
+            
+          </div>
+          <p id="mami">------------------------------------------</p>
+            <div style="display: flex;flex-direction: row;justify-content: flex-end;">
+            <input  class="btn btn-warning text-black" type="button" id="cancel"  value="CANCEL"> &nbsp;&nbsp;
+            <input  type="submit" id="btn" class="btn btn-warning text-black" value="APPLY">
+          </div>
+          
+          </form>
+          <br>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <div *ngFor="let i of recently_added"> 
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="assets/bg.png" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">i["music"]</p>
+      </div>
+    </div>
+  </div> 
+   -->

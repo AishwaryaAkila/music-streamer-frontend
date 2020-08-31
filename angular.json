@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "musicStreamer"
+    }
+  },
+  "defaultProject": "musicStreamer",
+  "cli": {
+    "analytics": "6ef54c8d-ae1d-422a-819c-c7f1af97c732"
+  }
 }
